@@ -1,0 +1,37 @@
+<?php
+$translate = $this->plugin('translate');
+?>
+<nav class="pagination" role="navigation">
+<?php if ($totalCount): ?>
+    
+    <div class="row-count nav-item"><?php echo $totalCount?><?php echo sprintf($translate('Items')); ?>
+    <?php echo "," ;?>
+    <span>
+    <?php echo sprintf($translate('page'));?>
+    <?php echo ":" ;?>
+    <?php echo $currentPage;?>
+    </span>
+    </div>
+    <div class="nav-item">
+    <?php if ($currentPage != 1): ?>
+    <?php echo $this->hyperlink('', $previousPageUrl, ['class' => 'previous o-icon-prev button', 'title' => $translate('Previous'), 'aria-label' => $translate('Previous')]); ?>
+    <?php else: ?>
+    <span class="previous o-icon-prev button inactive "></span>
+    <?php endif; ?>
+
+    <?php if ($currentPage < $pageCount): ?>
+    <?php echo $this->hyperlink('', $nextPageUrl, ['class' => 'next o-icon-next button', 'title' => $translate('Next'), 'aria-label' => $translate('Next')]); ?>
+    <?php else: ?>
+    <span class="next o-icon-next button inactive "></span>
+    <?php endif; ?>
+
+    <?php
+    $from = $offset + 1;
+    $to = ($currentPage < $pageCount) ? $offset + $perPage : $totalCount;
+    ?>
+    <div>
+
+<?php else: ?>
+    <?php echo $translate('0 results'); ?>
+<?php endif; ?>
+</nav>
