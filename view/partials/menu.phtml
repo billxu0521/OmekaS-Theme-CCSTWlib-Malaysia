@@ -22,13 +22,14 @@
                             </a>
                         </li>
                     <?php } else { ?>
-                        <li class="nav-item dropdown px-lg-4">
+                        <li class="nav-item dropdown px-lg-4 ">
                             <a href="#" class="nav-link text-uppercase text-expanded" data-toggle="dropdown"><?php echo $this->translate($page->getLabel()) ?></a>
-                            <ul class="dropdown-menu">
+                            <ul class="dropdown-menu container">
+                                <div class="row justify-content-start">
                                 <?php foreach ($page->getPages() as $child) { ?>
                                     <?php // when using partials we need to manually check for ACL conditions ?>
                                     <?php if(!$child->isVisible() || !$this->navigation()->accept($child)) { continue; } ?>
-                                    <li class="nav-item px-lg-4 py-lg-2">
+                                    <li class="nav-item px-lg-4 py-lg-2 col-6">
                                         <a class="sub-link" href="<?php echo $child->getHref() ?>">
                                             <?php echo $this->translate($child->getLabel()) ?>
                                         </a>
@@ -44,11 +45,11 @@
                                                         </a>
                                                         <?php $hasChildren = $subchild->hasPages(); ?>
                                                         <?php if ($hasChildren) { ?>
-                                                            <ul class="dropdown-menu">
+                                                            <ul class="dropdown-menu ">
                                                                 <?php foreach ($subchild->getPages() as $subsubchild) { ?>
                                                                     <?php // when using partials we need to manually check for ACL conditions ?>
                                                                     <?php if(!$subsubchild->isVisible() || !$this->navigation()->accept($subsubchild)) { continue; } ?>
-                                                                    <li class="nav-item px-lg-4 py-lg-2">
+                                                                    <li class="nav-item px-lg-4 py-lg-2 ">
                                                                         <a class="sub-link" href="<?php echo $subsubchild->getHref() ?>">
                                                                             <?php echo $this->translate($subsubchild->getLabel()) ?>
                                                                         </a>
@@ -62,6 +63,7 @@
                                         <?php } ?>
                                     </li>
                                 <?php } ?>
+                                </div>
                             </ul>
                         </li>
                     <?php } ?>

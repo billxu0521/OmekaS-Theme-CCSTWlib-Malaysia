@@ -5,7 +5,6 @@ $this->headScript()->prependFile($this->assetUrl('js/lightslider.min.js'));
 $this->headScript()->prependFile($this->assetUrl('js/lightgallery.min.js'));
 $this->headLink()->prependStylesheet($this->assetUrl('css/lightgallery.min.css'));
 $this->headLink()->prependStylesheet($this->assetUrl('css/lightslider.min.css'));
-$this->headLink()->prependStylesheet($this->assetUrl('css/show.css'));
 $lightMedia = [];
 $otherMedia = [];
 foreach ($item->media() as $media) {
@@ -69,6 +68,7 @@ foreach ($item->media() as $media) {
 
 <script>
     jQuery(document).ready(function() {
+      console.log('send API');
       $('#itemfiles').lightSlider({
           mode: 'fade',
           autoWidth: true,
@@ -104,9 +104,11 @@ foreach ($item->media() as $media) {
     });
 </script>
 
+<div class="social-network-relationship"></div>
 <div class="meta-properties">
     <?php echo $item->displayValues(); ?>
 </div>
+<div class="clearfix">&nbsp;</div>
 
 <div class="property">
     <?php $itemSets = $item->itemSets(); ?>

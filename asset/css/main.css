@@ -1,8 +1,29 @@
 /* Applies to the entire page */
 body {
-font-family: "Open Sans", Helvetica, Arial, sans-serif;
+font-family: serif;
 display: block;
 margin: auto;
+}
+
+.header-top{
+    height: 36px;
+    background-color: #535453;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    z-index: 9999;
+    color: white;
+    position: relative;
+    font-size: 28px;
+}
+#logo{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    cursor: pointer;
+    height: 20vh;
+    opacity: 0.8;
+    background-color: white;
 }
 
 #itemshowcontainer{
@@ -138,7 +159,6 @@ h1 {
 
 /*Blue buttons*/
 .button{
-    background-color: #1A4893;
     padding: 12px;
 }
 
@@ -223,10 +243,11 @@ h1 {
 .navbar-light .navbar-nav .nav-link{
 	color: #ffffff;
 	font-size: 1.3em;
+        letter-spacing: 0.1em;
 }
 
 .navbar-light .navbar-nav .sub-link{
-    color: #1A4893;
+    color: #4F4F4F;
     display: inline-block;
     font-size: 1.0em;
     width: 100%;
@@ -245,7 +266,7 @@ ul.dropdown-menu.show{
 }
 
 ul.dropdown-menu li:hover{
-    background-color: #1A4893;
+    background-color: #D0D0D0;
     text-decoration: none;
 }
 
@@ -257,15 +278,25 @@ ul.dropdown-menu li:hover > ul.dropdown-menu{
     top: 5px;
 }
 
+ul.dropdown-menu .row{
+    width: 100%;
+    margin: 0;
+}
+
 .navbar-light .navbar-nav ul.dropdown-menu li.nav-item:hover > a.sub-link{
     color: #FFFFFF;
 }
 
+.navbar-light .navbar-nav li.nav-item:hover {
+    background: #272727;
+}
 
+#content .breadcrumbs{
+    text-align: left;
+}
 /*The blue box behind the navigation bar*/
 .bg-faded {
-	background-color: #000000;
-
+	background-color: #535453;
 }
 
 hr.divider {
@@ -283,8 +314,6 @@ hr.divider {
 .navdivider2 {
 	border-color: #292b2c;
 	max-width:1500px;
-   
- 
 }
 
 /* Info Pages */
@@ -304,6 +333,11 @@ div.sidemenu li a, div.sidemenu li a:visited{
     width: auto;
 }
 
+.social-network-relationship{
+    height: 60vh;
+    width: 100%;
+    background-color: gray;
+}
 
 /*applies to the footer*/
 footer {
@@ -492,11 +526,6 @@ div li a:active {
     color: #1A4893;
 }
 
-
-
-
-
-
 /* These links apply to the home page under "Explore further" */
 .black a:link {
     color: #1A4893;
@@ -518,7 +547,7 @@ div li a:active {
 }
 
 .black a{
-	font-size: 1.7em;
+    font-size: 1.7em;
 }
 
 
@@ -533,7 +562,7 @@ div li a:link {
 }
 
 
-nav.pagination{margin-bottom:30px;font-size:20px;line-height:45px}.pagination input{text-align:center}.resource-list+.pagination{border-color:transparent}.pagination form{min-width:90px}.pagination form,.pagination .button,.pagination button,.pagination .page-count{display:inline-block;vertical-align:top;height:45px}.pagination .button{background-color:#F0F0F0;width:45px;text-align:center;padding:7.5px;border-radius:2px;color:#ababab;line-height:30px}.pagination .button:hover{background-color:#787878}.pagination .inactive.button{opacity:.5;background-color:white}.pagination .inactive.button:hover{background-color:white}.pagination form,.pagination .last{margin-right:7.5px}.pagination input{width:60px}
+nav.pagination{margin-bottom:30px;font-size:20px;line-height:45px}.pagination input{text-align:center}.resource-list+.pagination{border-color:transparent}.pagination form{min-width:90px}.pagination form,.pagination .button,.pagination button,.pagination .page-count{display:inline-block;vertical-align:top;height:45px}.pagination .button{width:45px;text-align:center;padding:7.5px;border-radius:2px;color:#ababab;line-height:30px;font-size: 28px}.pagination .button:hover{background-color:#E0E0E0}.pagination .inactive.button{opacity:.5;background-color:white}.pagination .inactive.button:hover{background-color:white}.pagination form,.pagination .last{margin-right:7.5px}.pagination input{width:60px}
 nav.pagination input[type="text"], input[type="password"], input[type="email"], input[type="url"], textarea {
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -576,16 +605,16 @@ div.item.resource{
 }
 
 div#content div.property a, div.item.resource .title a, div.item.resource .title a:visited{
-    color: #1A4893;
+    color: #4F4F4F;
     text-decoration: none;
 }
 div.item.resource .title a:hover{
-    color: #1A4893;
+    color: black;
     text-decoration: underline;
 }
 
 div.item.resource a img{
-    width: 18vw;
+    width: 16vw;
     -webkit-filter: brightness(100%);
     transition: .1s;
 }
@@ -596,15 +625,22 @@ div.item.resource:hover img{
     border-radius: 1px;
 }
 
-.pagination .row-count{
-    font-size: 28px;
-    color: #272727;
-    width: 25vw;
-    padding-right: 1vw;
-    padding-left: 2vw;
-    background: #E0E0E0;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
+#content{
+    text-align: center;
+}
+
+.pagination li a{
+    color: #3C3C3C !important;
+}
+
+.page-item.active .page-link{
+    background: #dee2e6 !important;
+    border: 1px solid #dee2e6;
+}
+
+.row-count{
+    font-size: 34px;
+    color: #6C6C6C;
 }
 
 div#content .language{
