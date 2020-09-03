@@ -1,7 +1,7 @@
 <?php
 /*
  * Copyright BibLibre, 2016
- * Copyright Daniel Berthereau, 2018
+ * Copyright, Daniel Berthereau, 2018
  *
  * This software is governed by the CeCILL license under French law and abiding
  * by the rules of distribution of free software.  You can use, modify and/ or
@@ -29,37 +29,45 @@
 
 /**
  * @var \Zend\View\Renderer\PhpRenderer $this
- * @var \Omeka\Api\Representation\SiteRepresentation $site
+ * @var \Search\Query $query
  * @var \Search\Response $response
- * @var string $resourceName
- * @var string $title
  */
 
-$results = $response->getResults($resourceName);
+$facets = $response->getFacetCounts();
+
+$translate = $this->plugin('translate');
+
+$itemSets = $this->params()->fromQuery('itemSet');
+if (!empty($itemSets['ids'][0]) && count($itemSets['ids']) == 1):
+    $itemSet = $this->api()->read('item_sets', $itemSets['ids'][0])->getContent();
+endif;
 ?>
 
-<?php if (count($results)):
-    $headingTerm = $this->siteSetting('browse_heading_property_term', 'dcterms:title');
-    $bodyTerm = $this->siteSetting('browse_body_property_term', 'dcterms:description');
-    $bodyTerms = $this->themeSetting('browse_body_property_terms', [$bodyTerm]);
+<aside class="search-sidebar">
+    <?php if (isset($itemSet)): ?>
+        <div id="about-itemset">
+            <?php echo $itemSet->value('dcterms:description'); ?>
+        </div>
+    <?php endif; ?>
 
-    $itemSets = $this->params()->fromQuery('itemSet');
-    if (!empty($itemSets['ids'][0]) && count($itemSets['ids']) == 1):
-        $itemSet = $this->api()->read('item_sets', $itemSets['ids'][0])->getContent();
-        $title = $itemSet->displayTitle() . ' : ' . $title;
-    endif;
-?>
-<div class="resource-list">
-    <?php
-    foreach ($results as $result):
-        $resource = $this->api()->read($resourceName, $result['id'])->getContent();
-        echo $this->partial('search/resource', [
-            'resource' => $resource,
-            'headingTerm' => $headingTerm,
-            'bodyTerms' => $bodyTerms,
-            'tag' => 'div',
-        ]);
-    endforeach;
-    ?>
-</div>
-<?php endif; ?>
+    <?php if (count($facets)): ?>
+        <?php $facetLabel = $this->plugin('facetLabel'); ?>
+        <?php $facetLink = $this->plugin('facetLink'); ?>
+        <div class="search-facets" id="search-facets">
+            <ul>
+                <?php foreach ($facets as $name => $facetValues): ?>
+                    <li class="search-facet">
+                        <h3><?php echo $translate($facetLabel($name)); ?></h3>
+                        <ul class="search-facet-items">
+                            <?php foreach ($facetValues as $facetValue): ?>
+                                <li class="search-facet-item">
+                                    <?php echo $facetLink($name, $facetValue); ?>
+                                </li>
+                            <?php endforeach; ?>
+                        </ul>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+    <?php endif; ?>
+</aside>

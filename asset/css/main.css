@@ -1,8 +1,21 @@
 /* Applies to the entire page */
 body {
-font-family: serif;
-display: block;
-margin: auto;
+    font-family: serif;
+    display: block;
+    margin: auto;
+
+    background-color: #ffffff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='0' x2='0' y1='0' y2='100%25' gradientTransform='rotate(0,720,380)'%3E%3Cstop offset='0' stop-color='%23ffffff'/%3E%3Cstop offset='1' stop-color='%23ffffff'/%3E%3C/linearGradient%3E%3Cpattern patternUnits='userSpaceOnUse' id='b' width='368' height='306.7' x='0' y='0' viewBox='0 0 1080 900'%3E%3Cg fill-opacity='0.02'%3E%3Cpolygon fill='%23444' points='90 150 0 300 180 300'/%3E%3Cpolygon points='90 150 180 0 0 0'/%3E%3Cpolygon fill='%23AAA' points='270 150 360 0 180 0'/%3E%3Cpolygon fill='%23DDD' points='450 150 360 300 540 300'/%3E%3Cpolygon fill='%23999' points='450 150 540 0 360 0'/%3E%3Cpolygon points='630 150 540 300 720 300'/%3E%3Cpolygon fill='%23DDD' points='630 150 720 0 540 0'/%3E%3Cpolygon fill='%23444' points='810 150 720 300 900 300'/%3E%3Cpolygon fill='%23FFF' points='810 150 900 0 720 0'/%3E%3Cpolygon fill='%23DDD' points='990 150 900 300 1080 300'/%3E%3Cpolygon fill='%23444' points='990 150 1080 0 900 0'/%3E%3Cpolygon fill='%23DDD' points='90 450 0 600 180 600'/%3E%3Cpolygon points='90 450 180 300 0 300'/%3E%3Cpolygon fill='%23666' points='270 450 180 600 360 600'/%3E%3Cpolygon fill='%23AAA' points='270 450 360 300 180 300'/%3E%3Cpolygon fill='%23DDD' points='450 450 360 600 540 600'/%3E%3Cpolygon fill='%23999' points='450 450 540 300 360 300'/%3E%3Cpolygon fill='%23999' points='630 450 540 600 720 600'/%3E%3Cpolygon fill='%23FFF' points='630 450 720 300 540 300'/%3E%3Cpolygon points='810 450 720 600 900 600'/%3E%3Cpolygon fill='%23DDD' points='810 450 900 300 720 300'/%3E%3Cpolygon fill='%23AAA' points='990 450 900 600 1080 600'/%3E%3Cpolygon fill='%23444' points='990 450 1080 300 900 300'/%3E%3Cpolygon fill='%23222' points='90 750 0 900 180 900'/%3E%3Cpolygon points='270 750 180 900 360 900'/%3E%3Cpolygon fill='%23DDD' points='270 750 360 600 180 600'/%3E%3Cpolygon points='450 750 540 600 360 600'/%3E%3Cpolygon points='630 750 540 900 720 900'/%3E%3Cpolygon fill='%23444' points='630 750 720 600 540 600'/%3E%3Cpolygon fill='%23AAA' points='810 750 720 900 900 900'/%3E%3Cpolygon fill='%23666' points='810 750 900 600 720 600'/%3E%3Cpolygon fill='%23999' points='990 750 900 900 1080 900'/%3E%3Cpolygon fill='%23999' points='180 0 90 150 270 150'/%3E%3Cpolygon fill='%23444' points='360 0 270 150 450 150'/%3E%3Cpolygon fill='%23FFF' points='540 0 450 150 630 150'/%3E%3Cpolygon points='900 0 810 150 990 150'/%3E%3Cpolygon fill='%23222' points='0 300 -90 450 90 450'/%3E%3Cpolygon fill='%23FFF' points='0 300 90 150 -90 150'/%3E%3Cpolygon fill='%23FFF' points='180 300 90 450 270 450'/%3E%3Cpolygon fill='%23666' points='180 300 270 150 90 150'/%3E%3Cpolygon fill='%23222' points='360 300 270 450 450 450'/%3E%3Cpolygon fill='%23FFF' points='360 300 450 150 270 150'/%3E%3Cpolygon fill='%23444' points='540 300 450 450 630 450'/%3E%3Cpolygon fill='%23222' points='540 300 630 150 450 150'/%3E%3Cpolygon fill='%23AAA' points='720 300 630 450 810 450'/%3E%3Cpolygon fill='%23666' points='720 300 810 150 630 150'/%3E%3Cpolygon fill='%23FFF' points='900 300 810 450 990 450'/%3E%3Cpolygon fill='%23999' points='900 300 990 150 810 150'/%3E%3Cpolygon points='0 600 -90 750 90 750'/%3E%3Cpolygon fill='%23666' points='0 600 90 450 -90 450'/%3E%3Cpolygon fill='%23AAA' points='180 600 90 750 270 750'/%3E%3Cpolygon fill='%23444' points='180 600 270 450 90 450'/%3E%3Cpolygon fill='%23444' points='360 600 270 750 450 750'/%3E%3Cpolygon fill='%23999' points='360 600 450 450 270 450'/%3E%3Cpolygon fill='%23666' points='540 600 630 450 450 450'/%3E%3Cpolygon fill='%23222' points='720 600 630 750 810 750'/%3E%3Cpolygon fill='%23FFF' points='900 600 810 750 990 750'/%3E%3Cpolygon fill='%23222' points='900 600 990 450 810 450'/%3E%3Cpolygon fill='%23DDD' points='0 900 90 750 -90 750'/%3E%3Cpolygon fill='%23444' points='180 900 270 750 90 750'/%3E%3Cpolygon fill='%23FFF' points='360 900 450 750 270 750'/%3E%3Cpolygon fill='%23AAA' points='540 900 630 750 450 750'/%3E%3Cpolygon fill='%23FFF' points='720 900 810 750 630 750'/%3E%3Cpolygon fill='%23222' points='900 900 990 750 810 750'/%3E%3Cpolygon fill='%23222' points='1080 300 990 450 1170 450'/%3E%3Cpolygon fill='%23FFF' points='1080 300 1170 150 990 150'/%3E%3Cpolygon points='1080 600 990 750 1170 750'/%3E%3Cpolygon fill='%23666' points='1080 600 1170 450 990 450'/%3E%3Cpolygon fill='%23DDD' points='1080 900 1170 750 990 750'/%3E%3C/g%3E%3C/pattern%3E%3C/defs%3E%3Crect x='0' y='0' fill='url(%23a)' width='100%25' height='100%25'/%3E%3Crect x='0' y='0' fill='url(%23b)' width='100%25' height='100%25'/%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: cover;
+/* background by SVGBackgrounds.com */
+}
+
+.text-heading a{
+    border-style: double;
+    border-width: 4px;
+    padding: 5px;
+    background: white;
 }
 
 .header-top{
@@ -24,6 +37,10 @@ margin: auto;
     height: 20vh;
     opacity: 0.8;
     background-color: white;
+}
+.container{
+    color:#696969; 
+    width: 90vw;
 }
 
 #itemshowcontainer{
@@ -52,6 +69,11 @@ margin: auto;
 
 .title a{
   font-size: 20px;
+}
+#broswer_title{
+    width: 30vw;
+    margin: auto;
+    letter-spacing: 8px;
 }
 
 /* BYUI Logo */
@@ -86,16 +108,40 @@ margin: auto;
     height: 36px;
 }
 
-#top-search-container{
-    padding: 20px 0px
-}
-
 #top-search-container #search{
     text-align: right;
+    position: absolute;
+    right: 10vw;
+    top: 135px;
+    z-index: 100;
 }
 
 #top-search-container #search input, #top-search-container #search .input-group-text{
     border-radius: 0px;
+}
+
+.input-group-append{
+    background: #D9D9D9;
+}
+
+.values{
+    text-align: left;
+}
+
+.search-facet-item span a{
+    color: darkslategray !important;
+}
+
+.search-sidebar{
+    padding: 10% 0;
+}
+
+.search-results{
+    padding: 10% 0;
+}
+
+.row resource-list{
+    
 }
 
 /* Applies spacing to the slideshow and the logo */
@@ -174,9 +220,9 @@ h1 {
 
 .tagline-upper {
     display: inline-block;
-	font-size: 2.3em;
-	font-weight: 100;
-	line-height: 1;
+    font-size: 2.3em;
+    font-weight: 100;
+    line-height: 1;
     font-family: 'Merriweather', serif;
     padding-left: 0px;
     margin-top:0.5em;
@@ -213,9 +259,9 @@ h1 {
 /* The figure captions for the home page gallery  */
 .figure-caption{
     background-color: #1A4893;
-	padding-top: 15px;
-	padding-bottom: 10px;
-	color: white; 
+    padding-top: 15px;
+    padding-bottom: 10px;
+    color: white; 
     margin-left: 55px;
     margin-right:55px;
     margin-top: -30px;
@@ -241,7 +287,7 @@ h1 {
 }
 
 .navbar-light .navbar-nav .nav-link{
-	color: #ffffff;
+	color: #696969;
 	font-size: 1.3em;
         letter-spacing: 0.1em;
 }
@@ -255,6 +301,12 @@ h1 {
 
 .navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .show>.nav-link{
     color: #FFFFFF;
+    background: #878787;
+}
+
+.navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .show.nav-item{
+    color: #FFFFFF;
+    background: #878787;
 }
 
 ul.dropdown-menu{
@@ -265,9 +317,14 @@ ul.dropdown-menu.show{
     width: 250px;
 }
 
+ul.dropdown-menu li:click{
+    background-color: #696969;
+}
+
 ul.dropdown-menu li:hover{
-    background-color: #D0D0D0;
+    background-color: #696969;
     text-decoration: none;
+    color: #FFFFFF;
 }
 
 ul.dropdown-menu li:hover > ul.dropdown-menu{
@@ -288,7 +345,12 @@ ul.dropdown-menu .row{
 }
 
 .navbar-light .navbar-nav li.nav-item:hover {
-    background: #272727;
+    background: #878787;
+}
+
+.navbar-light .navbar-nav li.nav-item:hover >a.nav-link{
+    color: #FFFFFF;
+    background: #878787;
 }
 
 #content .breadcrumbs{
@@ -296,17 +358,17 @@ ul.dropdown-menu .row{
 }
 /*The blue box behind the navigation bar*/
 .bg-faded {
-	background-color: #535453;
+
 }
 
 hr.divider {
-	border-color: #292b2c;
-	max-width: 250px;
+    border-color: #292b2c;
+    max-width: 250px;
 }
 
 .navdivider {
-	border-color: #292b2c;
-	max-width:200px;
+    border-color: #292b2c;
+    max-width:200px;
     margin-left:80px;
  
 }
@@ -336,15 +398,22 @@ div.sidemenu li a, div.sidemenu li a:visited{
 .social-network-relationship{
     height: 60vh;
     width: 100%;
-    background-color: gray;
 }
 
 /*applies to the footer*/
 footer {
-  color: white;
   padding: 40px 0;
   background-color:#535453;
 }
+
+footer div{
+  color: white ;
+}
+
+footer p{
+  color: white ;
+}
+
 /* Applies to the library.byui.edu link on the footer*/
     .font-sm{
 	font-size: 1.2em;
@@ -425,12 +494,14 @@ footer {
 
 
 #link{
-	color: white;
+    color: white;
 }
 
 header .navbar{
     padding-bottom: 0px;
     padding-top: 0px;
+    border-bottom: black;
+    border-bottom-style: double;
 }
 
 /* unvisited link */
@@ -503,27 +574,27 @@ div li a:active {
 
 
 .breadcrumbs a{
-	font-size: 1.2em;
-    color: #1A4893;
+    font-size: 1.2em;
+    color: #4F4F4F;
 }
 
 .breadcrumbs a:link {
-    color: #1A4893;
+    color: #4F4F4F;
 }
 
 /* visited link */
 .breadcrumbs a:visited {
-    color: #1A4893;
+    color: #4F4F4F;
 }
 
 /* mouse over link */
 .breadcrumbs a:hover {
-    color: #1A4893;
+    color: #4F4F4F;
 }
 
 /* selected link */
 .breadcrumbs a:active {
-    color: #1A4893;
+    color: #4F4F4F;
 }
 
 /* These links apply to the home page under "Explore further" */
@@ -614,7 +685,7 @@ div.item.resource .title a:hover{
 }
 
 div.item.resource a img{
-    width: 16vw;
+    width: 18vw;
     -webkit-filter: brightness(100%);
     transition: .1s;
 }
@@ -639,7 +710,7 @@ div.item.resource:hover img{
 }
 
 .row-count{
-    font-size: 34px;
+    font-size: 24px;
     color: #6C6C6C;
 }
 
@@ -676,6 +747,12 @@ div#content .language{
     margin: 20px 0px;
 }
 
+.meta-properties {
+  max-height: 80vh;
+  overflow: auto;
+}
+
+
 /*Haven't had to use this yet*/
 /*tablet view/ ipad view*/
 @media screen and (min-device-width: 701px) and (max-device-width: 1024px) {
@@ -701,7 +778,29 @@ div#content .language{
 /* iPhone 6/7 & bigger mobile screen sizes */
 @media only screen and (min-device-width: 375px) and (max-device-width: 700px) {
 
-	
+.tagline-upper {
+    display: inline-block;
+    font-size: 1.3em;
+    font-weight: 100;
+    line-height: 1;
+    font-family: 'Merriweather', serif;
+    padding-left: 0px;
+    margin-top:0.5em;
+    letter-spacing: 3px;
+    vertical-align: middle;
+}
+
+#top-search-container{
+    display: none;
+}
+
+.container {
+    width: 90vw;
+}
+
+div.item.resource a img{
+    width: 50vw;
+}
 
  
 	

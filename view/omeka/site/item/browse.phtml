@@ -6,8 +6,11 @@ $query = $this->params()->fromQuery(); ?>
     $query['item_set_id'] = $itemSet->id(); ?>
 <?php endif; ?>
 <?php usort($items, function($a, $b) {return strcmp($a->value('bibo:pageStart'), $b->value('bibo:pageStart'));});?>
+<div class="clearfix">&nbsp;</div>
+<?php echo $this->breadcrumbs();?>
+<div class="clearfix">&nbsp;</div>
+<div id="broswer_title"><h2>瀏覽群賢錄</h2></div>
 
-<h1>瀏覽群賢錄</h1>
 <?php echo $this->pagination(); ?>
 <div class="row resource-list">
     <?php foreach ($items as $item): ?>

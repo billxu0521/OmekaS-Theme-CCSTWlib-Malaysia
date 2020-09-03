@@ -13,7 +13,7 @@ $translate = $this->plugin('translate');
 $escape = $this->plugin('escapeHtml');
 $assetUrl = $this->plugin('assetUrl');
 ?>
-<nav class="pagination justify-content-center" role="navigation">
+<nav class="pagination" role="navigation">
 <?php if ($totalCount): ?>
     <?php
     $pages = [$currentPage];
@@ -35,28 +35,28 @@ $assetUrl = $this->plugin('assetUrl');
     ?>
 
     <?php if ($currentPage > 1): ?>
-        <span class="page-item page previous">
+        <span class="page previous">
             <a href="<?= $escape($previousPageUrl) ?>" title="<?= $translate('Previous') ?>">
-                <span class="previous o-icon-prev button inactive "></span>
+                <img src="<?= $assetUrl('img/previous.svg') ?>"/>
             </a>
         </span>
     <?php endif; ?>
 
     <?php foreach ($pages as $page): ?>
         <?php $q = array_merge($query, ['page' => $page]); ?>
-        <span class="page-item page <?= $page == $currentPage ? 'active' : '' ?>">
+        <span class="page <?= $page == $currentPage ? 'active' : '' ?>">
             <?php if ($page != $currentPage): ?>
-                <a class="page-link" href="<?= $escape($this->url(null, [], ['query' => $q], true)) ?>"><?= $page ?></a>
+                <a href="<?= $escape($this->url(null, [], ['query' => $q], true)) ?>"><?= $page ?></a>
             <?php else: ?>
-                <span class="page-link"><?= $page ?></span>
+                <span><?= $page ?></span>
             <?php endif; ?>
         </span>
     <?php endforeach; ?>
 
     <?php if ($currentPage < $pageCount): ?>
-        <span class="page-item page next">
+        <span class="page next">
             <a href="<?= $escape($nextPageUrl) ?>" title="<?= $translate('Next') ?>">
-                 <span class="next o-icon-next button inactive "></span>
+                <img src="<?= $assetUrl('img/next.svg') ?>"/>
             </a>
         </span>
     <?php endif; ?>

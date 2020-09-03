@@ -7,38 +7,27 @@
  */
 
 $translate = $this->plugin('translate');
-?>
+$assetUrl = $this->plugin('assetUrl');
 
+// Note: urls are managed by js.
+// TODO Use $this->sortLink()?
+$links = [];
+$labels = [];
+foreach ($sortOptions as $name => $label):
+    @list($field, $direction) = explode(' ', $name, 2);
+    $links[$field][] = [
+        'direction' => $direction,
+        'name' => $name,
+        'active' => ($query->getSort() === $name),
+        'label' => $label,
+    ];
+    $labels[$field] = $translate($label);
+endforeach;
+?>
 <div class="search-results-header">
-    <div class="search-results-count">
-        <?= $this->pagination() ?>
-    </div>
-    <div class="search-results-sort">
-        <form>
-            <?php
-            if ($sortOptions):
-                $sortOptions = array_map([$this, 'translate'], $sortOptions);
-                $sortSelect = new Zend\Form\Element\Select('sort');
-                $sortSelect
-                    ->setValueOptions($sortOptions)
-                    ->setValue($query->getSort())
-                    ->setLabel($translate('Sort by'));
-            endif;
-            ?>
-            <?php if (!empty($sortSelect)): ?>
-            <?= $this->formLabel($sortSelect) ?>
-            <?= $this->formSelect($sortSelect) ?>
-            <?php endif; ?>
-        </form>
-    </div>
+    
     <div>
-        
-        <table>
-          <tr>
-            <td style='border-right:2px solid #000000;padding-right: 15%;'><a style="color: darkslategray;" class="search-view-type search-view-type-list" href="#"><i class="fas fa-list fa-2x" ></i></a></td>
-             <td style='padding-left: 15%;'><a style="color: darkslategray;" class="search-view-type search-view-type-grid" href="#"><i class="fas fa-th fa-2x"></i></a></td>
-          </tr>
-        </table>
-        
+        <a class="search-view-type search-view-type-grid" href="#"></a>
+
     </div>
 </div>

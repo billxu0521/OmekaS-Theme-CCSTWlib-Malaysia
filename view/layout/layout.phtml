@@ -5,19 +5,15 @@ $this->headMeta()->setCharset('utf-8');
 $this->headMeta()->appendName('viewport', 'width=device-width, initial-scale=1');
 $this->headTitle($this->setting('installation_title', 'Omeka S'))->setSeparator(' · ');
 
+$this->headScript()->prependFile($this->assetUrl('js/spc.js'));
+$this->headScript()->prependFile($this->assetUrl('js/bootstrap.bundle.min.js'));
+$this->headScript()->prependFile($this->assetUrl('js/global.js', 'Omeka'));
+$this->headScript()->prependFile($this->assetUrl('js/jquery.min.js'));
 
 $this->headLink()->prependStylesheet($this->assetUrl('css/iconfonts.css'));
 $this->headLink()->prependStylesheet($this->assetUrl('css/main.css'));
 $this->headLink()->prependStylesheet($this->assetUrl('css/bootstrap.min.css'));
 $this->headLink()->prependStylesheet($this->assetUrl('css/all.css'));
-
-$this->headLink()->prependStylesheet('//fonts.googleapis.com/css?family=Crimson+Text:400,400italic,700,700italic');
-$this->headLink()->prependStylesheet('//fonts.googleapis.com/css?family=Merriweather:400,400italic,700,700italic');
-
-$this->headScript()->prependFile($this->assetUrl('js/spc.js'));
-$this->headScript()->prependFile($this->assetUrl('js/bootstrap.bundle.min.js'));
-$this->headScript()->prependFile($this->assetUrl('js/global.js', 'Omeka'));
-$this->headScript()->prependFile($this->assetUrl('js/jquery.min.js'));
 
 
 $this->trigger('view.layout');
@@ -50,14 +46,27 @@ $this->trigger('view.layout');
             <div class="container">
 
                 <div class="row responsive">
-                    <div class="col-md-8">
-                        <div class="tagline-upper text-heading text-black">
+                    <div class="col-md" style="text-align: center;">
+                        <div class="tagline-upper text-heading text-black" >
                             <a href="/s/malaysiaperson/page/home">
                                 馬來西亞興化群賢錄
                             </a>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                </div>
+
+            </div>
+        </div>
+        <div class="clearfix">&nbsp;</div>
+        <div class="container-fluid" style="padding: 0px;">
+            <header>
+                <?php
+                    echo $site->publicNav()->menu()->setPartial('partials/menu')->render();
+                ?>
+            </header>
+            <div class="container-fluid">
+                <div class="container">
+                    <div id="content" role="main">
                         <div id="top-search-container">
                             <div id="search">
                                 <form action="/s/malaysiaperson/solr" id="search-form" _lpchecked="1">
@@ -74,21 +83,6 @@ $this->trigger('view.layout');
                                 </form>
                             </div>
                         </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="container-fluid" style="padding: 0px;">
-            <header>
-                <?php
-                    echo $site->publicNav()->menu()->setPartial('partials/menu')->render();
-                ?>
-            </header>
-            <div class="container-fluid">
-                <div class="container">
-                    <div id="content" role="main">
                         <?php echo $this->content; ?>
                     </div>
                 </div>
@@ -120,8 +114,7 @@ $this->trigger('view.layout');
                             </div>
                             <div class="col-md-8">
                                 <div> 台北市文山區指南路二段64號 國立政治大學 - 研究暨創新育成總中心 350325 室</div>
-                                <div> NO.64,Sec.2,ZhiNan Rd.,Wenshan District,Taipei City 11605,Taiwan (R.O.C) </div>
-                                <div> Research and Innovation-incubation Center（NCCU RIIC） Room 350325</div>
+                                <div> NO.64,Sec.2,ZhiNan Rd.,Wenshan District,Taipei City 11605,Taiwan (R.O.C) - Research and Innovation-incubation Center（NCCU RIIC） Room 350325</div>
                             </div>
                         </div>
                         <p class="copyright small float-none">Copyright &copy; 2020</p>
