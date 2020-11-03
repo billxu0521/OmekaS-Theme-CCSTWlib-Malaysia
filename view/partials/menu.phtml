@@ -8,7 +8,6 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarResponsive">
-
             <ul class="navbar-nav mx-auto">
                 <?php foreach ($this->container as $page) { ?>
                     <?php /* @var $page Zend\Navigation\Page\Mvc */ ?>
@@ -24,7 +23,7 @@
                     <?php } else { ?>
                         <li class="nav-item dropdown px-lg-4 ">
                             <a href="#" class="nav-link text-uppercase text-expanded" data-toggle="dropdown"><?php echo $this->translate($page->getLabel()) ?></a>
-                            <ul class="dropdown-menu container">
+                            <ul class="dropdown-menu">
                                 <div class="row justify-content-start">
                                 <?php foreach ($page->getPages() as $child) { ?>
                                     <?php // when using partials we need to manually check for ACL conditions ?>

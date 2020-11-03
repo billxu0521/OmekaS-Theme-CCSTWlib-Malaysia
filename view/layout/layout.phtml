@@ -3,7 +3,12 @@ $escape = $this->plugin('escapeHtml');
 $this->htmlElement('html')->setAttribute('lang', $this->lang());
 $this->headMeta()->setCharset('utf-8');
 $this->headMeta()->appendName('viewport', 'width=device-width, initial-scale=1');
-$this->headTitle($this->setting('installation_title', 'Omeka S'))->setSeparator(' · ');
+$this->headMeta()->appendName('google-site-verification', 'feUQYEVwsfnyvxRCO2r4qRtnLa6rWWSq1ORyqtFyAUI');
+$this->headMeta()->appendName('description', '《馬來西亞興化群賢錄》電子網站是一個由「馬來西亞興安總會」（以下簡稱馬興總）、「國立政治大學華人主體性研究中心」和「馬來亞大學馬來西亞華人研究中心」合作設立的項目。本網站內容主要是收錄了「馬興總」於2019年出版的《馬來西亞興化群賢錄》，經政大華人主體性中心整理後分類呈現。馬來亞大學馬來西亞華人研究中心則是參與編撰《群賢錄》的合作單位。');
+$this->headMeta()->appendName('key', '馬來西亞興化群賢錄,馬來西亞,興化,東南亞');
+
+#$this->headTitle($this->setting('installation_title', 'Omeka S'))->setSeparator(' · ');
+$this->headTitle($site->title())->setSeparator(' · ');
 
 $this->headScript()->prependFile($this->assetUrl('js/spc.js'));
 $this->headScript()->prependFile($this->assetUrl('js/bootstrap.bundle.min.js'));
@@ -18,6 +23,7 @@ $this->headLink()->prependStylesheet($this->assetUrl('css/all.css'));
 
 $this->trigger('view.layout');
 //$userBar = $this->partial('common/user-bar', ['site' => $site]);
+
 
 ?>
 <?php echo $this->doctype(); ?>
@@ -70,6 +76,7 @@ $this->trigger('view.layout');
                         <div id="top-search-container">
                             <div id="search">
                                 <form action="/s/malaysiaperson/solr" id="search-form" _lpchecked="1">
+                                <!--form action="<?php echo $this->escapeHtml($this->url('site/resource', ['controller' => 'item','action' => 'browse'], true)); ?>" id="search-form" _lpchecked="1"-->
                                     <div class="input-group">
                                         <input class="form-control py-2 border-right-0 border" type="search" name="q" id="q" value="" placeholder="站內搜尋">
                                         <span class="input-group-append">
@@ -83,7 +90,7 @@ $this->trigger('view.layout');
                                 </form>
                             </div>
                         </div>
-                        <?php echo $this->content; ?>
+                         <?php echo $this->content; ?>
                     </div>
                 </div>
             </div>
@@ -102,7 +109,7 @@ $this->trigger('view.layout');
                                 <i class="fab fa-creative-commons-nc fa-2x ml-2 mr-2"></i>
                                 <i class="fab fa-creative-commons-nd fa-2x ml-2 mr-2"></i>
                                 <p>除另有註明，本網站之內容皆採用<br>
-                                <a href="https://creativecommons.org/licenses/by-sa/3.0/tw/">創用CC 姓名標示-相同方式分享 3.0 台灣</a>授權條款
+                                <a href="https://creativecommons.org/licenses/by-sa/3.0/tw/"  target="_blank">創用CC 姓名標示-相同方式分享 3.0 台灣</a>授權條款
                                 </p>
                             </div>  
                         </div>  

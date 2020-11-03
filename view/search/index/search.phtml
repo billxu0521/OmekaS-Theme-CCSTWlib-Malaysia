@@ -54,8 +54,8 @@ $this->headTitle($translate('Search'), \Zend\View\Helper\Placeholder\Container\A
 <?php if (empty($isPartial)): ?>
 <div id="content" role="main">
 <?php endif; ?>
-
 <?php if (isset($response)): ?>
+    <div class="search-query h2">查詢詞彙:<?php echo $query->getQuery();?></div>
     <div class="search-results-wrapper">
         <?= $this->partial('search/facets', ['searchPage' => $searchPage, 'query' => $query, 'response' => $response]) ?>
         <div class="search-results">

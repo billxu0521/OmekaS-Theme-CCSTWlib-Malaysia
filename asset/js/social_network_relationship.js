@@ -48,14 +48,15 @@ function starGraph(data){
     //        .datum({});
     
     // Update the current slider value (each time you drag the slider handle)
-    $("#SvgRange").on('input',function() {
-        zoom.scaleTo(svg, this.value/10 );
-    });
+    //$("#SvgRange").on('input',function() {
+    //    zoom.scaleTo(svg, this.value/10 );
+    //});
 
     
-    var _svg = d3.select("svg"),
+    var _svg = d3.select("#sno_relationship"),
         s_width = + _svg.attr("width"),
         s_height = + _svg.attr("height");
+    _svg.select('g').remove();
 
     var svg = _svg.append('g')
         .attr("width",  460)
@@ -214,7 +215,7 @@ function starGraph(data){
     function zoomed() {
             svg.attr("transform", d3.event.transform);
             console.log(d3.event.transform.k * 10 );
-            $('#SvgRange').attr( "value", d3.event.transform.k * 10 );
+            //$('#SvgRange').attr( "value", d3.event.transform.k * 10 );
         };
     function dragstarted(d) {
       if (!d3.event.active) simulation.alphaTarget(0.5).restart();
